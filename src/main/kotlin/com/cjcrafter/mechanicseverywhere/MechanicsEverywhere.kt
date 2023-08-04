@@ -1,13 +1,18 @@
 package com.cjcrafter.mechanicseverywhere
 
 import com.cjcrafter.mechanicseverywhere.command.Command
+import com.cjcrafter.mechanicseverywhere.listeners.MechanicsListener
 import me.deecaad.core.file.Configuration
+import me.deecaad.core.file.JarInstancer
+import me.deecaad.core.file.JarSearcher
 import me.deecaad.core.mechanics.Mechanics
 import me.deecaad.core.utils.Debugger
 import me.deecaad.core.utils.FileUtil
 import org.bstats.bukkit.Metrics
 import org.bstats.charts.SimpleBarChart
+import org.bukkit.Bukkit
 import org.bukkit.plugin.java.JavaPlugin
+import java.util.jar.JarFile
 
 class MechanicsEverywhere : JavaPlugin() {
 
@@ -77,7 +82,9 @@ class MechanicsEverywhere : JavaPlugin() {
     }
 
     fun registerListeners() {
-
+        val jarSearcher = JarInstancer(JarFile(file))
+        val listeners = jarSearcher.createAllInstances(MechanicsListener::class.java, classLoader, true)
+        listeners.forEach { server.pluginManager.registerEvents(it, this) }
     }
 
 

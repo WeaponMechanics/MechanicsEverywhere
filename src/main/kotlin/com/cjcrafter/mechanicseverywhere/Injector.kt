@@ -39,9 +39,7 @@ object Injector {
 
             override fun visitFile(file: Path, attrs: BasicFileAttributes): FileVisitResult {
                 // Only parse valid YAML files
-                if (!file.toString().endsWith(".yml", ignoreCase = true) && !file.toString()
-                        .endsWith(".yaml", ignoreCase = true)
-                )
+                if (!file.toString().endsWith(".yml", ignoreCase = true) && !file.toString().endsWith(".yaml", ignoreCase = true))
                     return FileVisitResult.CONTINUE
                 if (file.fileName.startsWith("#"))
                     return FileVisitResult.CONTINUE
