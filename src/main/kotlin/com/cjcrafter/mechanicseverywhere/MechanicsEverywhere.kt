@@ -15,9 +15,9 @@ class MechanicsEverywhere : JavaPlugin() {
     var metrics: Metrics? = null
 
     // Stuff from config
-    var repeatedMechanics: Map<Int, Mechanics> = HashMap()
+    var repeatedMechanics: MutableMap<Int, Mechanics> = HashMap()
     lateinit var config: Configuration
-    var mechanicPools: Map<String, Mechanics> = HashMap()
+    var mechanicPools: MutableMap<String, Mechanics> = HashMap()
 
     override fun onLoad() {
         plugin = this
