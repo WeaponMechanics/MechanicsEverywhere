@@ -1,0 +1,9 @@
+# Remember that each name, like 'resourcepack,' must be unique
+# And '/mechanicseverywhere reload' does not work for commands...
+# This file is disabled by default since it has a '#' at the start of the
+# name. If you want to enable this file, delete the `#` in the file name.
+
+
+resourcepack:
+  #permission:
+  Mechanics:

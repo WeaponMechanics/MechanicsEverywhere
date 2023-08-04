@@ -56,6 +56,7 @@ dependencies {
     api("org.spigotmc:spigot-api:1.20.1-R0.1-SNAPSHOT")
 
     compileOnly("me.deecaad:mechanicscore:2.4.6")
+    implementation("org.bstats:bstats-bukkit:3.0.1")
 }
 
 tasks.named<ShadowJar>("shadowJar") {
@@ -66,6 +67,10 @@ tasks.named<ShadowJar>("shadowJar") {
     dependencies {
         relocate ("kotlin.", "com.cjcrafter.mechanicseverywhere.lib.kotlin.") {
             include(dependency("org.jetbrains.kotlin:"))
+        }
+
+        relocate("org.bstats", "com.cjcrafter.mechanicseverywhere.lib.bstats") {
+            include(dependency("org.bstats:"))
         }
     }
 }

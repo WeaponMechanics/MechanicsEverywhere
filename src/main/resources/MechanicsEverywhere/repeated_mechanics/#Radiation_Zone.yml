@@ -1,0 +1,7 @@
+# This file is disabled by default since it has a '#' at the start of the
+# name. If you want to enable this file, delete the `#` in the file name.
+
+
+# Every 3 seconds, try to apply poison to everyone in a radiation biome
+Every_60_Ticks:
+  - "Potion{potion=POISON, time=80} @Server{}"

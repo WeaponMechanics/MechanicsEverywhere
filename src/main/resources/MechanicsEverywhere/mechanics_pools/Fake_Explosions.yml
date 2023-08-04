@@ -1,0 +1,13 @@
+# Remember that each name, like 'Fake_Explosion_Large,' must be unique
+
+# A fake explosion roughly the size of a creeper
+# You can reference this pool using:
+#   - "MechanicsPool{pool=Fake_Explosion}"
+Fake_Explosion:
+  - "Sound{}"
+  - "Particle{}"
+
+# A fake explosion roughly the size of a charged creeper
+Large_Fake_Explosion:
+  - "Sound{}"
+  - "Particle{}"
